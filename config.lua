@@ -37,6 +37,10 @@ local config = {
     maxBreedRound = 1000,
     -- Check existing crops on the storage farm before spreading or tiering
     checkStorageBefore = false,
+    -- Throw away all items that aren't the target seeds during autoSpread
+    -- (requires trash can one block left of the storage chest)
+    onlyKeepTargetSeeds = true,
+    targetSeedOverride = 'Salty Root Seeds',
 
     -- =========== DO NOT CHANGE ===========
 
@@ -44,8 +48,10 @@ local config = {
     chargerPos = {0, 0},
     -- The coordinate for the crop stick container
     stickContainerPos = {-1, 0},
-    -- The coordinate for the storage chest / trash can
+    -- The coordinate for the storage chest
     storagePos = {-2, 0},
+    -- The coordinate for the trash can
+    trashPos = {-3, 0},
     -- The coordinate for the farmland that the dislocator is facing
     relayFarmlandPos = {1, 1},
     -- The coordinate for the transvector dislocator

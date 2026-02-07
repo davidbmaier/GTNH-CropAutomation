@@ -65,6 +65,25 @@ end
 
 function dumpInventory()
     withSelectedSlot(function()
+        if config.onlyKeepTargetSeeds then
+            gps.go(config.trashPos)
+            for i=1, (robot.inventorySize() + config.storageStopSlot) do
+                os.sleep(0)
+                if robot.count(i) > 0 then
+                    -- determine if this item should be kept
+                    local itemInfo = inventory_controller.getStackInInternalSlot(i)
+                    print('Considering dumping item: ', itemInfo.label)
+                    print('Current target: ', config.targetSeedOverride)
+                    -- throw away anything that is not the target seed and not a cropstick
+                    if itemInfo.label ~= config.targetSeedOverride and itemInfo.label ~= 'Crop' then
+                        print('Throw away')
+                        robot.select(i)
+                        inventory_controller.dropIntoSlot(sides.down, 1)
+                    end
+                end
+            end
+        end
+
         gps.go(config.storagePos)
 
         for i=1, (robot.inventorySize() + config.storageStopSlot) do
