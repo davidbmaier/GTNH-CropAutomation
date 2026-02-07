@@ -10,7 +10,7 @@ local scanner = require('scanner')
 local events = require('events')
 local inventory_controller = component.inventory_controller
 local redstone = component.redstone
-local restockAll, cleanUp  -- Forward declaration
+local restockAll, cleanUp, dumpInventory
 
 local function needCharge()
     return computer.energy() / computer.maxEnergy() < config.needChargeLevel
@@ -63,7 +63,7 @@ local function restockStick()
 end
 
 
-local function dumpInventory()
+function dumpInventory()
     withSelectedSlot(function()
         gps.go(config.storagePos)
 

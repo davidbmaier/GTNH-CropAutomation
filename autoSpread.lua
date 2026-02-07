@@ -38,7 +38,7 @@ local function checkChild(slot, crop)
             local stat = crop.gr + crop.ga - crop.re
 
             -- Make sure no parent on the working farm is empty
-            if stat >= config.autoStatThreshold and findEmpty() and crop.gr <= config.workingMaxGrowth and crop.re <= config.workingMaxResistance then
+            if stat >= config.autoSpreadThreshold and findEmpty() and crop.gr <= config.workingMaxGrowth and crop.re <= config.workingMaxResistance then
                 action.transplant(gps.workingSlotToPos(slot), gps.workingSlotToPos(emptySlot))
                 action.placeCropStick(2)
                 database.updateFarm(emptySlot, crop)
