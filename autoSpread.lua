@@ -44,7 +44,7 @@ local function checkChild(slot, crop)
                 database.updateFarm(emptySlot, crop)
 
             -- No parent is empty, put in storage
-            elseif stat >= config.autoSpreadThreshold then
+            elseif stat >= config.autoSpreadThreshold and crop.gr <= config.storageMaxGrowth and crop.re <= config.storageMaxResistance then
 
                 if config.useStorageFarm then
                     action.transplant(gps.workingSlotToPos(slot), gps.storageSlotToPos(database.nextStorageSlot()))
@@ -56,7 +56,7 @@ local function checkChild(slot, crop)
                     action.placeCropStick(2)
                 end
 
-            -- Stats are not high enough
+            -- Stats are not high enough/higher than the limits
             else
                 action.deweed()
                 action.placeCropStick()

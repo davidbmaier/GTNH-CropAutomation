@@ -2,14 +2,14 @@ local config = {
     -- NOTE: EACH CONFIG SHOULD END WITH A COMMA
 
     -- Side Length of Working Farm
-    workingFarmSize = 6,
+    workingFarmSize = 12,
     -- Side Length of Storage Farm
     storageFarmSize = 9,
 
     -- Once complete, remove all extra crop sticks to prevent the working farm from weeding
     cleanUp = true,
     -- Moves crops to the storage farm, otherwise dumps everything in the storage chest.
-    useStorageFarm = true,
+    useStorageFarm = false,
     -- Keep crops that are not the target crop during autoSpread and autoStat
     keepMutations = false,
     -- Stat-up crops during autoTier (Very Slow)
@@ -26,9 +26,9 @@ local config = {
     workingMaxGrowth = 21,
     -- Maximum Resistance for crops on the working farm
     workingMaxResistance = 2,
-    -- Maximum Growth for crops on the storage farm
+    -- Maximum Growth for crops on the storage farm/in storage
     storageMaxGrowth = 23,
-    -- Maximum Resistance for crops on the storage farm
+    -- Maximum Resistance for crops on the storage farm/in storage
     storageMaxResistance = 2,
 
     -- Minimum Charge Level
