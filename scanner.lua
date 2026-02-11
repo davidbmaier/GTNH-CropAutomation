@@ -39,6 +39,10 @@ end
 
 
 local function isWeed(crop, farm)
+    if crop.isCrop == false then
+        return false
+    end
+
     if farm == 'working' then
         return crop.name == 'weed' or
         crop.name == 'Grass' or
