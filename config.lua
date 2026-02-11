@@ -9,7 +9,7 @@ local config = {
     -- Once complete, remove all extra crop sticks to prevent the working farm from weeding
     cleanUp = true,
     -- Moves crops to the storage farm, otherwise dumps everything in the storage chest.
-    useStorageFarm = false,
+    useStorageFarm = true,
     -- Keep crops that are not the target crop during autoSpread and autoStat
     keepMutations = false,
     -- Stat-up crops during autoTier (Very Slow)
@@ -36,10 +36,10 @@ local config = {
     -- Max breeding round before termination of autoSpread or autoTier
     maxBreedRound = 1000,
     -- Check existing crops on the storage farm before spreading or tiering
-    checkStorageBefore = false,
+    checkStorageBefore = true,
     -- Throw away all items that aren't the target seeds during autoSpread
     -- (requires trash can one block left of the storage chest)
-    onlyKeepTargetSeeds = true,
+    onlyKeepTargetSeeds = false,
     targetSeedOverride = 'Salty Root Seeds',
 
     -- =========== DO NOT CHANGE ===========
