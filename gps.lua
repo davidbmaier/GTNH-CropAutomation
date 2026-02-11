@@ -44,7 +44,7 @@ end
 local function storageSlotToPos(slot)
     local x = (slot - 1) // config.storageFarmSize + 2
     local row = (slot - 1) % config.storageFarmSize
-    local y = row - (storageFarmSize - 7)
+    local y = row - (config.storageFarmSize - 7)
 
     return {x, y}
 end
